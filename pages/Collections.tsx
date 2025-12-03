@@ -36,10 +36,21 @@ export const Collections: React.FC = () => {
             {collections.map((col, idx) => (
               <div 
                 key={idx}
-                className="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl min-h-[400px] md:min-h-[500px] shadow-2xl overflow-hidden group"
-                style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url("${col.img}")` }}
+                className="relative flex flex-col items-stretch justify-end rounded-xl min-h-[400px] md:min-h-[500px] shadow-2xl overflow-hidden group isolate"
               >
-                 <div className="flex w-full flex-col md:flex-row items-start md:items-end justify-between gap-6 p-8 md:p-12 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                 {/* Image - z-index 0 */}
+                 <img 
+                    src={col.img} 
+                    alt={col.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                 />
+                 
+                 {/* Overlay - z-index 10 */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+                 
+                 {/* Content - z-index 20 */}
+                 <div className="relative flex w-full flex-col md:flex-row items-start md:items-end justify-between gap-6 p-8 md:p-12 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-20">
                     <div className="flex max-w-[600px] flex-1 flex-col gap-2">
                        <h2 className="text-white text-3xl md:text-4xl font-bold leading-tight font-serif">{col.title}</h2>
                        <p className="text-white/90 text-lg font-medium leading-relaxed">

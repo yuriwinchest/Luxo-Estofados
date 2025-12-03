@@ -80,14 +80,16 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </header>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-background-light dark:bg-background-dark border-b border-white/10 p-4 flex flex-col gap-4">
-            <Link to="/sofas" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium">Sofás</Link>
-            <Link to="/poltronas" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium">Poltronas</Link>
-            <Link to="/colecoes" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium">Coleções</Link>
-            <Link to="/product/elegance" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium">Atendimento</Link>
+      <div 
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <div className="bg-background-light dark:bg-background-dark border-b border-white/10 p-4 flex flex-col gap-4 shadow-inner">
+            <Link to="/sofas" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium hover:text-primary-bright transition-colors">Sofás</Link>
+            <Link to="/poltronas" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium hover:text-primary-bright transition-colors">Poltronas</Link>
+            <Link to="/colecoes" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium hover:text-primary-bright transition-colors">Coleções</Link>
+            <Link to="/product/elegance" onClick={() => setIsMobileMenuOpen(false)} className="text-black dark:text-white font-medium hover:text-primary-bright transition-colors">Atendimento</Link>
         </div>
-      )}
+      </div>
 
       {/* Main Content */}
       <main className="flex-grow">

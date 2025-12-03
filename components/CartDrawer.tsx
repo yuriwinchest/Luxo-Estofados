@@ -45,7 +45,12 @@ export const CartDrawer: React.FC = () => {
             cartItems.map((item) => (
               <div key={item.cartId} className="flex gap-4">
                 <div className="w-20 h-20 rounded bg-gray-100 flex-shrink-0 overflow-hidden">
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="w-full h-full object-cover" 
+                    loading="lazy"
+                  />
                 </div>
                 <div className="flex-1 flex flex-col justify-between">
                   <div>

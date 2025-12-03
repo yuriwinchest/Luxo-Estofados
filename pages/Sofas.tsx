@@ -60,7 +60,13 @@ export const Sofas: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {sofas.map((sofa) => (
             <Link to={sofa.id === 'elegance' ? `/product/${sofa.id}` : '#'} key={sofa.id} className="group flex flex-col gap-3 cursor-pointer">
-               <div className="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-xl overflow-hidden relative" style={{ backgroundImage: `url("${sofa.image}")` }}>
+               <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
+                  <img 
+                    src={sofa.image} 
+                    alt={sofa.name} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                   <button className="absolute top-3 right-3 flex items-center justify-center size-8 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/40 transition-colors">
                      <span className="material-symbols-outlined text-lg">favorite_border</span>

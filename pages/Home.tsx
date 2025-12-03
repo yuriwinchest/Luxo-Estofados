@@ -9,11 +9,17 @@ export const Home: React.FC = () => {
         {/* Hero Section */}
         <div className="w-full @container pt-5">
           <div className="@[480px]:p-0">
-            <div 
-              className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded items-center justify-center p-4 relative group"
-              style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDoHBpiZ9WpXUZk__CVyAMBBxaEHOFHbVvFbe37F78_eXOQBXRbNqfSSxIK74NIwB2LXpnugUiYyfbdQZC7fGU6bVFyopfBLSh4q0azVSnAEiYj0Buz8F-FXLeSO0vS4qeVjzR59SMRxH5TEy0_AbVWBvKgl9lUDh_FznsBGLJ94Hn3KgCCG923J_MzAwdYJ8fdMY9PJkfTj9-WMqs5QbrJDQIXK7nHld5pOR_yh-iq0s8Ya4rzK83KxWaa_3wIrpqXuGNDniz6f2z")' }}
-            >
-              <div className="flex flex-col gap-2 text-center z-10">
+            <div className="relative flex min-h-[480px] flex-col gap-6 @[480px]:gap-8 @[480px]:rounded items-center justify-center p-4 group overflow-hidden isolate">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDoHBpiZ9WpXUZk__CVyAMBBxaEHOFHbVvFbe37F78_eXOQBXRbNqfSSxIK74NIwB2LXpnugUiYyfbdQZC7fGU6bVFyopfBLSh4q0azVSnAEiYj0Buz8F-FXLeSO0vS4qeVjzR59SMRxH5TEy0_AbVWBvKgl9lUDh_FznsBGLJ94Hn3KgCCG923J_MzAwdYJ8fdMY9PJkfTj9-WMqs5QbrJDQIXK7nHld5pOR_yh-iq0s8Ya4rzK83KxWaa_3wIrpqXuGNDniz6f2z"
+                alt="Luxurious living room with a sophisticated sofa"
+                className="absolute inset-0 w-full h-full object-cover"
+                // @ts-ignore
+                fetchPriority="high"
+              />
+              <div className="absolute inset-0 bg-black/40 z-10" />
+              
+              <div className="flex flex-col gap-2 text-center z-20">
                 <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl max-w-2xl drop-shadow-lg">
                   Onde o Design Encontra o Conforto
                 </h1>
@@ -21,7 +27,7 @@ export const Home: React.FC = () => {
                   Peças exclusivas, criadas sob encomenda para refletir seu estilo único. Descubra a arte do estofado de luxo.
                 </h2>
               </div>
-              <Link to="/colecoes" className="z-10 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary-bright text-black text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
+              <Link to="/colecoes" className="z-20 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary-bright text-black text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
                 <span className="truncate">Explore a Coleção</span>
               </Link>
             </div>
@@ -39,9 +45,15 @@ export const Home: React.FC = () => {
               { title: "Coleção Vanguarda", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA21AM9mNUB4nQro2Ee99F3Aw1HKul2x2yqjHV_G_cxkHfH_RdRSudasahtg6qEa6z_BhNm29NZpSRQTCcw1ywJeDyDoUYdg7NIgrH7ZaVCwS96lTF6yyuLmSoULZgLbPxiJGhc03pThmdBdUW9h6TQ3xnhI4pPPqG8b2h19YV-fGjD1AZ3iyrPDyF_GL3F8NYuywHaKkSop3gWY4HqYe_wDlZTbKvzhgOXRJTzbq1pBvGM78T44uBYAbbSh5QIfEI9HJPUQSW_UEG9" },
               { title: "Coleção Serenidade", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBOukusgkpP5mE6XMXmtyCmwCT1uv2ImQUd0NoQMDKCQAILEUxnfoRF8XXQkajV7o6wTBWUu6O_fBEiPDxovGLr4VOxnQ5xl628V7JmtJSbSpsvE9svO5v2FCiEidw1VWt9KEQHglABj17YhVbdHHpQsrUFbDgJJ5mM6quwp78oSNbZ57MPBq-dNZ6Vf_igDfup3aJWmArHUUzl7LdKHrPGMTo49QgFQL8O9EhPgCZ5sJqk4OadUpll5J7mLmdcOf93jFQWiAm6570m" }
             ].map((col, idx) => (
-              <Link to="/colecoes" key={idx} className="group relative bg-cover bg-center flex flex-col gap-3 rounded justify-end p-4 aspect-[3/4] overflow-hidden" style={{ backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("${col.img}")` }}>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                <p className="text-white text-base font-bold leading-tight w-4/5 line-clamp-3 relative z-10">{col.title}</p>
+              <Link to="/colecoes" key={idx} className="group relative flex flex-col gap-3 rounded justify-end p-4 aspect-[3/4] overflow-hidden isolate">
+                <img 
+                  src={col.img} 
+                  alt={col.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  loading="lazy" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10" />
+                <p className="text-white text-base font-bold leading-tight w-4/5 line-clamp-3 relative z-20">{col.title}</p>
               </Link>
             ))}
           </div>
@@ -63,11 +75,14 @@ export const Home: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-3 pb-3 group cursor-pointer">
-              <div 
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded overflow-hidden"
-                style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsPsUEiOIsEM2kTcfKg0KD_uG6aAgdtE4vW7ecBrWM-8puipHCEYSJy3JQILmCW7sjJi9YbbotoSN7U1SYycYy8Pi0Q37zhMl3bJXWLxOGWo_1sKbpwC92Jnbt5uinN7sXH7sFOzLLGZ4SnFQ_GRupwPdwrd5zIHLGx5e-8W_f1xj8nRHtndfra6P0gvit6GR2OoJsS6IcjfGtVP_AOUTem9eS0CzCkbGonhGA3fxmVNCt4icdLcQNFY86wxSyG4HZ7fn5BUyABaHm")' }}
-              >
-                 <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-all"></div>
+              <div className="w-full aspect-video rounded overflow-hidden relative">
+                 <img 
+                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsPsUEiOIsEM2kTcfKg0KD_uG6aAgdtE4vW7ecBrWM-8puipHCEYSJy3JQILmCW7sjJi9YbbotoSN7U1SYycYy8Pi0Q37zhMl3bJXWLxOGWo_1sKbpwC92Jnbt5uinN7sXH7sFOzLLGZ4SnFQ_GRupwPdwrd5zIHLGx5e-8W_f1xj8nRHtndfra6P0gvit6GR2OoJsS6IcjfGtVP_AOUTem9eS0CzCkbGonhGA3fxmVNCt4icdLcQNFY86wxSyG4HZ7fn5BUyABaHm"
+                   alt="Materiais Nobres"
+                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   loading="lazy"
+                 />
+                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
               </div>
               <div>
                 <p className="text-black dark:text-white text-base font-medium leading-normal">Materiais Nobres</p>
@@ -76,11 +91,14 @@ export const Home: React.FC = () => {
             </div>
             
             <div className="flex flex-col gap-3 pb-3 group cursor-pointer">
-              <div 
-                className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded overflow-hidden" 
-                style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2kl9Nvkebz2LnTmNuOClEjmUmCFB-5Bw1uo04dLIecRAJC-U1GYZX8g5lTdN_RGdY9osFPRNuzxE1AHPpxYmRRaIwB64LxO5XSI2tNQAYwVcW06kxURtXiiozb7JIQQRJKbn3QsB-DdsbBeiZAXtmcLAG-NkuVGK1ZbVousHQPsDr8lPsMmWAdXw6DXM3nxNVNdxtb5u0Bwtnnko0vmvR07pjKHVdBPG0AW-tNWxuCjV4eUwuX0Rim9R88kp0_ft6KpQ4DwHh5WQw")' }}
-              >
-                  <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-all"></div>
+              <div className="w-full aspect-video rounded overflow-hidden relative">
+                  <img 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kl9Nvkebz2LnTmNuOClEjmUmCFB-5Bw1uo04dLIecRAJC-U1GYZX8g5lTdN_RGdY9osFPRNuzxE1AHPpxYmRRaIwB64LxO5XSI2tNQAYwVcW06kxURtXiiozb7JIQQRJKbn3QsB-DdsbBeiZAXtmcLAG-NkuVGK1ZbVousHQPsDr8lPsMmWAdXw6DXM3nxNVNdxtb5u0Bwtnnko0vmvR07pjKHVdBPG0AW-tNWxuCjV4eUwuX0Rim9R88kp0_ft6KpQ4DwHh5WQw"
+                    alt="Design Personalizado"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
               </div>
               <div>
                 <p className="text-black dark:text-white text-base font-medium leading-normal">Design Personalizado</p>

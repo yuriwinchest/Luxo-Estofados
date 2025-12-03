@@ -76,7 +76,12 @@ export const Poltronas: React.FC = () => {
                    {products.map(product => (
                       <div key={product.id} className="group cursor-pointer">
                          <div className="relative aspect-square bg-[#f0f0f0] dark:bg-[#1f1f1f] rounded-lg overflow-hidden mb-4">
-                            <img src={product.image} alt={product.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                            <img 
+                                src={product.image} 
+                                alt={product.name} 
+                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                                loading="lazy"
+                            />
                             <button className="absolute top-3 right-3 p-2 bg-white/80 dark:bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                                <span className="material-symbols-outlined text-sm">favorite</span>
                             </button>
