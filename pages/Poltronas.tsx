@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const products = [
-  { id: 'vertice', name: "Poltrona Vértice", price: "R$ 4.299,00", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAYN9eunG02lk-1Xh9GrXC9pG1QstWhNj30ZNQSJTzg1KdueKQPxl46IYuw1A2R1_fcfVByiNOD4jUtuAqkat-Kt4dza-q4kF7Ya09lI-aLvke_KTn61HLemyKw3nQqurDpWL1m__Pw7t_qg8UN4MibBDk-7Y2TOdJpbPGCTWXAv0GWpSOAPJA4pw7UXG6SfwIs7yVXzfMKwogKLnt_t2RgTUhw1sGgAEe1hrpgLSTyEI_ywV3I1z0e5R3TuhNOgvZbVDro95i-TnjH" },
-  { id: 'aura', name: "Poltrona Aura", price: "R$ 5.800,00", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCkFWiNaIAvLxe-LzwXwNGoMcT-K6eSroYvYB5PZrTMuYoUb6DCucox5eT8Ef6RchJV8DX-cGtdUX7ay1asqmTOVBuZm8BRchsx9IMe5ByQFyUoL_rBbEPbKkbwzr5Fr85dF68VMf8P8EJExXKgs6QIr9d7MJsunbzUY_sL5r2oUZa02jANKvJ5uXvyMFGfBSDh6rij4jKUDv23Kj-fTzQjPjETTCCdnbiafOQs7QFIXZO6pLc8CZfvR-K_lFBfegqu-G5gB1pkY4lB" },
-  { id: 'serena', name: "Poltrona Serena", price: "Sob Consulta", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC2u_tfTL-1HZcVimlZb96axQwp-_ZD7TmUVDzSr2lgcbfi5bPeIAvTbM8FatFiITQnJhwpfnuqzM90qk6IvliJpAq-E1ywy3COEITmEJNydo6ZyAsPwoALgSC7NxJ5aOw8uRrVPa4YAyR-M9LyFLR0rPMjQKdBAAM-8nCeyWUfFU0XJFWm2_a_E0Au15pNpI8_ZSSQZ1APfhF7B6hHsjM2g5dSeGV-Yi-N4pYY-DYclFp2LENnMxCTyStTKo7lmpt-nTtkOhYLZGCf" },
-  { id: 'ocaso', name: "Poltrona Ocaso", price: "R$ 3.950,00", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADSOw8OOj5M-2fGjeV4Nfw15K7CmBqD0KB941Hip9_ssTPV1xhKqrBD5VNFwWvKNLN8BokixvlFP7vvDWorZ5SVtcCgRK3W6nXGH5b8mjeHFc44GECYgKL76xBxRw2MBv27vb49ZcZZt8mfZeQWlej0Fa0iunECfPqo_QUviUkDKu46RpViRv-4Y8JRPNLGE1WpRwT3sPhNSnM5a1cDn2uENHndmosjJjTxmhn0Vdg-MvTdpeatbWG_ZIsei-Z8tVRuur6OaRyyM3p" },
-  { id: 'linha', name: "Poltrona Linha", price: "R$ 6.100,00", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDI_R6d1mPpx2ASn4GHfmAEvk2TjbXM7al2PB44w7szrphyTAXETgtFH08Mv94Xr52tJKQ1a5Oz72Qc0uj0laeWdg5kqNAdPTMtTKft2JcONzskY7Ao8g-qdsUdP41JetINye-Hdry-YjRN_jj3i5oDANipZxf-KlI-jZBVUF0J59kf5Q1GtVOsedz58idTP9Dda4evyFPG9wUr73lIlrJEVfnh2bgCNFVypMc59khuDW0rn668cS8b8KsWPp_z2a2jmgNCJo-8rZT3" },
-  { id: 'conforto', name: "Poltrona Conforto", price: "R$ 4.500,00", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBuzStWBqDjxTT7HkHXnIfVyg2farVZugcJd75EVkLteEmVrZS3pE9YM1rDRVU5aprpjudTCS2PJs7VyGKDSGXlZssEg_MJ5guiC2U1SSjxfl5v9ewN0o9DZuO6iYDlLml0tZOWXZY2ubCIW56N-rMXYC6Zqoigp3GWrbhtzrmzl6ID3vVuIifkYBMPHLtstsF-QXsfXGBgSg2KdrL3QOJ-WjbueHGtsPjIiq0Q5RB93bqgyOZkZJdqyDyBSxUOyoqMbABjtO-E0nWF" },
-];
+import { products } from '../data';
 
 export const Poltronas: React.FC = () => {
+  const armchairs = products.filter(p => p.category === 'poltrona');
+
   return (
     <div className="bg-[#F9F9F9] dark:bg-background-dark min-h-screen">
        <div className="px-4 py-8 lg:px-20 lg:py-12 max-w-[1600px] mx-auto">
@@ -64,7 +58,7 @@ export const Poltronas: React.FC = () => {
              {/* Products Grid */}
              <div className="lg:col-span-3">
                 <div className="flex justify-between items-center mb-8">
-                   <span className="text-sm text-gray-500">Mostrando {products.length} de 27 resultados</span>
+                   <span className="text-sm text-gray-500">Mostrando {armchairs.length} resultados</span>
                    <select className="bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1.5 text-sm focus:ring-primary focus:border-primary">
                       <option>Relevância</option>
                       <option>Preço: Menor</option>
@@ -73,8 +67,8 @@ export const Poltronas: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
-                   {products.map(product => (
-                      <div key={product.id} className="group cursor-pointer">
+                   {armchairs.map(product => (
+                      <Link to={`/product/${product.id}`} key={product.id} className="group cursor-pointer">
                          <div className="relative aspect-square bg-[#f0f0f0] dark:bg-[#1f1f1f] rounded-lg overflow-hidden mb-4">
                             <img 
                                 src={product.image} 
@@ -88,7 +82,7 @@ export const Poltronas: React.FC = () => {
                          </div>
                          <h3 className="text-lg font-medium text-black dark:text-white font-playfair">{product.name}</h3>
                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{product.price}</p>
-                      </div>
+                      </Link>
                    ))}
                 </div>
                 

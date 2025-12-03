@@ -1,19 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const sofas = [
-  { id: 'firenze', name: "Sofá Firenze", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAh3pz9E9aX-klQqVHmUkGe2GUR-lSH4plqlhsxv9cuTVh8hsj8OLfzss5-FGj8VGsLuHW34Gmgoh6gAKHBxIdFo77GBsqkdHyV7LHPkBOekCvhoKV_qwqDg9lIsQGqIJy8rGeZ1N5WdclmfclSGExeXLhvqgkosOajLNWFsz9NCiNA2AybMnXryG8gGDkYRBXG3pQNFWCeaEHnWDOd_rW_dK-jLXDdQbcKWSkBhLFnJpaRXJZQ_Qe4v3d2eoJb_iAeeoiKDlmS7HzJ" },
-  { id: 'monaco', name: "Sofá Monaco", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCAh_q3L4VzqWTLDM382UkjTX2pePZD20omqVTG05kMTwrh57-1FbsO2PCYqaNUcFiKuUrsrjo8amG8e2kxZPl41FVNaaAoFZCfDt9VrqDm-1DLQCwagQW5XYt3I5aVD5LsVgonDvPUW6LYHMAXogUn6sf_Pv0PkPBt0QTl7yc_04sTKARthRnD6v5EUa7to4WhpYLUpXJdkOLkHfkit7P0bxqVYPz5A87yfscAjSavCOWq1HK0EVq-8H7-uxGvay_85PU59Yukjoti" },
-  { id: 'verona', name: "Sofá Verona", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBIwicGJUhsCclOkeYfD3YgvbL1gikm-0JYg4MSwUdUoNPTOL9WouJnNX2PCpREwNGQBv1OGL7MMMYTPDczGivnQTSXwVK81cUWsgLO8JiF5mfSVlnON45WZ99RBhrCCYfDbrK1xynEYiqBqnWkyfKf5UMDwbSlSktNe7QBGhv3lC0BeIXbCjCYc1eE8aAR3Fa4rOsJMOxQZO419Ww_JS8qiT68hiLVfMQha9AgSIygoJEWjXZ-I9E4S_uMA1Twflk0B5DyoFf2Skan" },
-  { id: 'capri', name: "Sofá Capri", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCWbrwDP9upAX_HGJmGCI4uvstv44mXmeJWEu5cmMMYSVraKDKDrJwghkGr3Ibz2r4k_9J8SAHYOO1wn7qjNK5YJyl9gERKqcTqf3QE7jDnRJnuBPWaw9fztgce08ScYRElksU1SMfRnKDwog_qDtqYJSBsmlfrsuYaThXt6ck0ao3ZNvxZe1o_Yc64eiiLiVSZOxnDawtQ_5M437xBKSlL6_uEkN9Abg3StFBB6ZC70V9q0Tm77F9MED_hgcvwVDCHSyJLBydAQBA" },
-  { id: 'siena', name: "Sofá Siena", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC6qENNhiaQr-Vvz9ZtsMzQOqp4AXdC12VLnfOQkIyIrwpgOzZb8Hz0Trdbzn1jZ7d03XLhXvKYINzE7WFKnIRPow50mwS-jv0L_tvgb6aerF1WTRPXFxRu54rvB5iqINbQtcv2EfCOyacQpdb1duKzqRo1hDb_gOXMWHbedqSMBSthOfXGtuhfK9kCQknrAgPULXbQdQ02XQAKVYZ86Tk9ustcb6tS3naQU2hUKFTzJe_dhP_vykYdZ7UPtKYEE6zNUWdoh76JxoTL" },
-  { id: 'bellagio', name: "Sofá Bellagio", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBVkVqdQL1kie4-F7auwXGGzgQ0zCGxd5Nx2-gHnp5YC9nv22179eex_pH-GMt-BzfGG3aPEt5ZcfaqhSUmWrUG0cZbJGTBArxr_6lAjoNofMpnFl_-08v-RaS9CUj17KzqPtnsfYCUCzgv-32xjBe-LrJXbC2jICrx7X9AGAFm-sYAm0IfZm9akjsDNQyB2l0EmYG8LOY3XC7fnJVV7aGTEzdQb5U4HLodxnD1fEDjIoyyfovL0U5GQYnrOJ_9rnU5nyYcPOXnO_v-" },
-  { id: 'elegance', name: "Sofá Modular Elegance", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkULFtQEYOioNdps1-5zcfHiN3SKhP2I6Cr2q8hukqR25bCIeL9j2BHhNokzYzi-rPqcOfWlHRxhXKSudGOnWNtHWi5RKy_8Rgww2PD1RgSQNHVpPUqe0kiZVSf2h9fiSdgTy6WeouuhMxspnYU7O0cPMExcqhcqx0HnGV9O9Vbcd8yIA-4zoumKmgnoCqpLhh9DQ3T4lIiQs97sErlM_7T9RegVEmgxImD0QRX2Pf6Oz7eDlbBY3x5HZ-lYpSxVgGYPx5fJl0k6x1" },
-  { id: 'portofino', name: "Sofá Portofino", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDcvBr9thU4pAULdQMC8mVoVvAfhTWSwYpQseHEEimMANLat_feMlYHvNT6SNOkxVLq5YcsDCWWkpmW6etei8U3D8TNisuPmgtNAjHZJ9vJiWzj-ERU61-5vLkotnawkemShTpSg_ydBpJzmGz6J4_K_-62pNCKt6iEwYZBZacpZTSbG1y-oWAAtA8p7cZK1S-ZVXWCcDOAFkAqb1SzM2ZFD4xRhuUTyZbIghacoARxGbvgeQ3Dk8Z8vvqg8DwI3t9sJiZekINy0wX3" },
-  { id: 'ravello', name: "Sofá Ravello", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBvVibTUUoRXEWWtElwgdetZTSuOauazcQSpqoItF2uYy-KNHVn6SeS7ioHaqh4wscfv9H8Kdy5LIzcHHquh9GD8pnboAfu33SNTOtW1FS3lG11z6c2hoy-ZukLvJhnbrf5VfW7KBbpg8jR1ipYOR2akJbxJU69IDZfSYr1ttl5FFz9DKC-5Fex_lmBMRrMugiywIrHam8K7wym3-sLH2-ODIAsqe3t7gh66m92pIC7v54TiBg0srpURuD9v91lQooTmS-pi7uVF6Mb" },
-];
+import { products } from '../data';
 
 export const Sofas: React.FC = () => {
+  const sofas = products.filter(p => p.category === 'sofa');
+
   return (
     <div className="px-4 sm:px-8 lg:px-10 py-8 flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-[1400px] mx-auto">
       {/* Sidebar */}
@@ -59,7 +50,7 @@ export const Sofas: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {sofas.map((sofa) => (
-            <Link to={sofa.id === 'elegance' ? `/product/${sofa.id}` : '#'} key={sofa.id} className="group flex flex-col gap-3 cursor-pointer">
+            <Link to={`/product/${sofa.id}`} key={sofa.id} className="group flex flex-col gap-3 cursor-pointer">
                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
                   <img 
                     src={sofa.image} 
@@ -74,7 +65,7 @@ export const Sofas: React.FC = () => {
                </div>
                <div>
                   <p className="text-black dark:text-white text-lg font-bold group-hover:text-primary-bright transition-colors">{sofa.name}</p>
-                  <p className="text-black/60 dark:text-[#bab59c] text-sm font-normal">Sob Consulta</p>
+                  <p className="text-black/60 dark:text-[#bab59c] text-sm font-normal">{sofa.price}</p>
                </div>
             </Link>
           ))}
